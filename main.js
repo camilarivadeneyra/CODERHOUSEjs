@@ -49,23 +49,29 @@
 
 // practicando DOM
 
+let titulo = document.getElementById ("texto1");
+
+console.log (titulo.innerText);
+
+let usuario = prompt ("Bienvenido a Strange Brewing! Ingrese su nombre:", "Su nombre");
+
+titulo.innerText = "Hola" +usuario+ "bienvenido a Strange Brewing";
+
+
 const productos = [
-    {id:1, nombre: "Cafetera Italiana", precio: 11900},
-    {id:2, nombre: "Cafetera Prensa Francesa", precio: 16750},
-    {id:3, nombre: "Cafetera Espresso", precio: 112900},
-    {id:4, nombre: "Cafetera De Filtro", precio: 9999},
-    {id:5, nombre: "Cafetera Chemex", precio:15999}
+    { id: 1, nombre: "CAPITAN NELSON - Neipa.", precio: 580 },
+    { id: 2, nombre: "CASI MADURO - Sour Ale.", precio: 480 },
+    { id: 3, nombre: "DOCTOR ANILLACO - Light Lager.", precio: 410 },
 ];
 
-for (const producto of productos) {
-    let data = document.createElement ("div");
+for ( const producto of productos ) {
+    let contenedor = document.createElement("div");
 
-    data.innerHTML = `<div class = "main">
-                        <h4> ID: ${producto.id} </h4>
-                        <h6> Producto: ${producto.nombre} </h6>
-                        <b> $${producto.precio}</b>
-                    </div>`;
-
+    contenedor.innerHTML = `<div class="container">
+                                <h3> ID: ${producto.id}</h3>
+                                <p> Producto: ${producto.nombre}</p>
+                                <b> $${producto.precio}</b>
+                            </div>`;
     
-    document.body.appendChild (data);
+    document.body.appendChild(contenedor);
 }
